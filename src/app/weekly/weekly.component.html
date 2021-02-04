@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="box">
+        <h2>First Week</h2>
+        <hr>
+        <div class="line" *ngFor="let todo of firstWeek">
+            <div>
+                <span class="day">{{todo.date | date:'EEEE'}}</span>
+                <span class="description">{{todo.description}}</span>
+            </div>
+        </div>
+        <h2>Second Week</h2>
+        <hr>
+        <div class="line" *ngFor="let todo of secondWeek">
+            <div>
+                <span class="day">{{todo.date | date:'EEEE' }}</span>
+                <span class="description">{{todo.description}}</span>
+            </div>
+        </div>
+        <h2>Third Week</h2>
+        <hr>
+        <div class="line" *ngFor="let todo of thirdWeek">
+            <div>
+                <span class="day">{{todo.date | date:'EEEE'}}</span>
+                <span class="description">{{todo.description}}</span>
+            </div>
+        </div>
+        <h2>Fourth Week</h2>
+        <hr>
+        <div class="line" *ngFor="let todo of forthWeek">
+            <div>
+                <span class="day">{{todo.date | date:'EEEE'}}</span>
+                <span class="description">{{todo.description}}</span>
+            </div>
+        </div>
+        <h2>Fifth Week</h2>
+        <hr>
+        <div class="line" *ngFor="let todo of fifthWeek">
+            <div>
+                <span class="day">{{todo.date | date:'EEEE'}}</span>
+                <span class="description">{{todo.description}}</span>
+            </div>
+        </div>
+    </div>
+</div>
