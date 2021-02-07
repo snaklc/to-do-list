@@ -37,10 +37,6 @@
             white-space: nowrap;
             background-color: #eae8f89c;
             border-radius: 5px;
-
-            
-
-           
         }
 
         .line>div{
@@ -51,12 +47,13 @@
             .day{
                 width: auto;
                 // overflow: hidden;
+                font-weight: 600;
                 white-space: nowrap;
                 font-size: 22px;
                 transition: width 0.8s;
                 border-left: 3px solid #5f5999;
                 margin-right: 5px;
-                padding: 5px;
+                padding: 10px;
                 background-color: #797597;
                 border-radius: 5px;
                 &:hover{
