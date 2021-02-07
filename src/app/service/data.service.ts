@@ -25,7 +25,7 @@ export class DataService {
     },
     {
       date: new Date("Fri Jan 1 2021 07:44:57"),
-      description: "asdasddas.",
+      description: "Sınava çalış.",
       id: 2,
       status: "do"
     },
@@ -50,7 +50,7 @@ export class DataService {
     {
       date: new Date("Fri Apr 1 2020 07:44:57"),
       description: "Oyun oyna.",
-      id:6,
+      id: 6,
       status: "do"
     },
     {

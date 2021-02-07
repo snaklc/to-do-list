@@ -30,7 +30,7 @@ export class HomepageComponent implements OnInit {
       console.log(this.dataService.toDos)
     }
     else {
-      alert('Write something before click add button!')
+      alert('Write something before click to add button!')
     }
     this.displayItems();
   }
@@ -41,10 +41,7 @@ export class HomepageComponent implements OnInit {
       this.endItem++;
     }
     console.log(this.displayToDos, this.startItem, this.endItem)
-
     this.displayToDos = this.dataService.toDos.slice(this.startItem, this.endItem);
-
-
   }
 
   deleteToDo(todo) {
@@ -67,6 +64,6 @@ export class HomepageComponent implements OnInit {
     })
 
   }
-  
+
 
 }

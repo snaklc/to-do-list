@@ -29,35 +29,58 @@
 
         .line{
             display: flex;
-            justify-content: space-between;
-            width: 500px;
-            padding: 8px;
+            justify-content: flex-start;
+            align-items: center;
+            width: auto;
+            padding: 5px;
             margin:5px 0px;
             white-space: nowrap;
             background-color: #eae8f89c;
             border-radius: 5px;
 
-            .day{
-                // width: 1ch;
-                // overflow: hidden;
-                // white-space: nowrap;
-                // font-family: monospace;
-                // transition: width 0.8s;
-                // border-left: 3px solid #5f5999;
+            
 
-                &:hover{
-                    // width: 100%;
-                    // transition-timing-function: ease;               
-                }
-            }
+           
         }
 
         .line>div{
-            display: flex;
-            justify-content: space-between;
+          display: flex;
             width: 100%;
+            transition: width 2s;
 
-            
+            .day{
+                width: auto;
+                // overflow: hidden;
+                white-space: nowrap;
+                font-size: 22px;
+                transition: width 0.8s;
+                border-left: 3px solid #5f5999;
+                margin-right: 5px;
+                padding: 5px;
+                background-color: #797597;
+                border-radius: 5px;
+                &:hover{
+                    // width: 100%;
+                    transition-timing-function: ease;    
+                    background-color: #797597;
+                }
+            }
+            .description{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 80%;
+                font-size: 20px;
+            }
         }
+        
+
+        
     }
+}
+
+.transition{
+    transition-timing-function: ease-in;   
+     color:white;
+
 }

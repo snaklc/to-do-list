@@ -4,15 +4,18 @@
         <hr>
         <div class="line" *ngFor="let todo of firstWeek">
             <div>
-                <span class="day">{{todo.date | date:'EEEE'}}</span>
+                <span *ngIf="!changeText" class="day">{{todo.date | date:'EEEE' | slice:0:1 }}</span>
+                <!-- <span *ngIf="changeText" class="day">{{todo.date | date:'EEEE'}}</span> -->
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
         <h2>Second Week</h2>
         <hr>
         <div class="line" *ngFor="let todo of secondWeek">
-            <div>
-                <span class="day">{{todo.date | date:'EEEE' }}</span>
+            <div (mouseover)="changeText=true" (mouseout)="changeText=false">
+                <span *ngIf="!changeText" class="day">{{todo.date | date:'EEEE' | slice:0:1 }}</span>
+                <span *ngIf="changeText" [class.transition]="true" class="day">{{todo.date | date:'EEEE'}}</span>
+
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
@@ -20,7 +23,7 @@
         <hr>
         <div class="line" *ngFor="let todo of thirdWeek">
             <div>
-                <span class="day">{{todo.date | date:'EEEE'}}</span>
+                <span class="day">{{todo.date | date:'EEEE' | slice:0:1}}</span>
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
@@ -28,7 +31,7 @@
         <hr>
         <div class="line" *ngFor="let todo of forthWeek">
             <div>
-                <span class="day">{{todo.date | date:'EEEE'}}</span>
+                <span class="day">{{todo.date | date:'EEEE' | slice:0:1}}</span>
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
@@ -36,7 +39,7 @@
         <hr>
         <div class="line" *ngFor="let todo of fifthWeek">
             <div>
-                <span class="day">{{todo.date | date:'EEEE'}}</span>
+                <span class="day">{{todo.date | date:'EEEE' | slice:0:1}}</span>
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
