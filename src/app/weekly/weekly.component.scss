@@ -6,7 +6,6 @@
     height: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     user-select: none;
-
     .box{
         width: 500px;
         height: auto;
@@ -15,18 +14,15 @@
         justify-content: space-between;
         align-items: flex-start;
         font-size: 18px;
-
         h2{
             color:#5f5999;
             margin:0;
             padding-top: 30px;
         }
-
         hr{
             width: 100%;
             opacity: 0.5;
         }
-
         .line{
             display: flex;
             justify-content: flex-start;
@@ -38,28 +34,55 @@
             background-color: #eae8f89c;
             border-radius: 5px;
         }
-
         .line>div{
-          display: flex;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
             width: 100%;
-            transition: width 2s;
+            .day-group{
+                overflow: hidden;
+                white-space:nowrap;
+                margin-right: 10px;
+                border-radius: 2px;
+                width: 100%;
+                color:#5f5999;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                border-left: 4px solid #5f5999;
+                &:hover .day{
+                    opacity: 1;
+                    transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color .2s;
+                    max-width: 160px;
+                    padding-right: 15px;
+                }
+                &:hover .day-short{
+                    padding-right: 0px;
+                    width: auto;
 
-            .day{
-                width: auto;
-                // overflow: hidden;
-                font-weight: 600;
-                white-space: nowrap;
-                font-size: 22px;
-                transition: width 0.8s;
-                border-left: 3px solid #5f5999;
-                margin-right: 5px;
-                padding: 10px;
-                background-color: #797597;
-                border-radius: 5px;
-                &:hover{
-                    // width: 100%;
-                    transition-timing-function: ease;    
-                    background-color: #797597;
+                }
+                .day-short {
+                    // width: 30px;
+                    display: flex;
+                    font-weight: 600;
+                    white-space: nowrap;
+                    font-size: 22px;
+                    padding: 10px 0px 10px 10px;
+                    border-radius: 5px;
+                    &:hover{
+                        width: auto;
+                    } 
+                }
+                .day{
+                    font-weight: 600;
+                    white-space: nowrap;
+                    font-size: 22px;
+                    border-radius: 5px;
+                    opacity: 0;
+                    max-width: 0;
+                    display: inline-block;
+                    text-decoration: none;
+                    transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s;
                 }
             }
             .description{
@@ -67,17 +90,8 @@
                 justify-content: flex-start;
                 align-items: center;
                 width: 80%;
-                font-size: 20px;
+                font-size: 18px;
             }
         }
-        
-
-        
     }
-}
-
-.transition{
-    transition-timing-function: ease-in;   
-     color:white;
-
 }

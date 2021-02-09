@@ -21,18 +21,19 @@ export class WeeklyComponent implements OnInit {
   selectedToDos = [];
   weekNumber;
   currentWeekNumber;
+  currentMonthName;
   item;
   changeText;
 
-  @ViewChild('day') day: ElementRef;
-  constructor(private dataService: DataService, private datePipe: DatePipe) {
-    this.changeText = false;
-
-  }
+  constructor(private dataService: DataService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
 
     this.currentDate = new Date();
+    this.currentMonthName = monthNames[this.currentDate.getMonth()];
     this.currentWeekNumber = this.datePipe.transform(this.currentDate, 'w');
     this.todos = this.dataService.toDos;
 
@@ -49,29 +50,23 @@ export class WeeklyComponent implements OnInit {
 
       }
       if (this.currentWeekNumber - 4 > 0) {
-        if (this.weekNumber == 1) {
+        if (this.weekNumber == 1 || this.weekNumber - 4 == 1) {
           this.firstWeek.push(data)
         }
-        if (this.weekNumber == 2) {
+        if (this.weekNumber == 2 || this.weekNumber - 4 == 2) {
           this.secondWeek.push(data)
         }
-        if (this.weekNumber == 3) {
+        if (this.weekNumber == 3 || this.weekNumber - 4 == 3) {
           this.thirdWeek.push(data)
         }
-        if (this.weekNumber == 4) {
+        if (this.weekNumber == 4 || this.weekNumber - 4 == 4) {
           this.forthWeek.push(data)
         }
-        if (this.weekNumber == 5) {
+        if (this.weekNumber == 5 || this.weekNumber - 4 == 5) {
           this.fifthWeek.push(data)
         }
       }
     })
-
   }
 
-  getDayOfWeek(date) {
-    const dayOfWeek = new Date(date).getDay();
-    return isNaN(dayOfWeek) ? null :
-      ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
-  }
 }

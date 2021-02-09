@@ -4,18 +4,21 @@
         <hr>
         <div class="line" *ngFor="let todo of firstWeek">
             <div>
-                <span *ngIf="!changeText" class="day">{{todo.date | date:'EEEE' | slice:0:1 }}</span>
-                <!-- <span *ngIf="changeText" class="day">{{todo.date | date:'EEEE'}}</span> -->
+                <div class="day-group">
+                    <span class="day-short">{{todo.date | date:'EEEE' | slice:0:1 }}</span>
+                    <span class="day">{{todo.date | date:'EEEE' | slice:1:todo.date.length}}</span>
+                </div>
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
         <h2>Second Week</h2>
         <hr>
         <div class="line" *ngFor="let todo of secondWeek">
-            <div (mouseover)="changeText=true" (mouseout)="changeText=false">
-                <span *ngIf="!changeText" class="day">{{todo.date | date:'EEEE' | slice:0:1 }}</span>
-                <span *ngIf="changeText" [class.transition]="true" class="day">{{todo.date | date:'EEEE'}}</span>
-
+            <div>
+                <div class="day-group">
+                    <span class="day-short">{{todo.date | date:'EEEE' | slice:0:1 }}</span>
+                    <span class="day">{{todo.date | date:'EEEE' | slice:1:todo.date.length}}</span>
+                </div>
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
@@ -23,7 +26,10 @@
         <hr>
         <div class="line" *ngFor="let todo of thirdWeek">
             <div>
-                <span class="day">{{todo.date | date:'EEEE' | slice:0:1}}</span>
+                <div class="day-group">
+                    <span class="day-short">{{todo.date | date:'EEEE' | slice:0:1}}</span>
+                    <span class="day">{{todo.date | date:'EEEE' | slice:1:todo.date.length}}</span>
+                </div>
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
@@ -31,17 +37,23 @@
         <hr>
         <div class="line" *ngFor="let todo of forthWeek">
             <div>
-                <span class="day">{{todo.date | date:'EEEE' | slice:0:1}}</span>
+                <div class="day-group">
+                    <span class="day-short">{{todo.date | date:'EEEE' | slice:0:1}}</span>
+                    <span class="day">{{todo.date | date:'EEEE' | slice:1:todo.date.length}}</span>
+                </div>
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
-        <h2>Fifth Week</h2>
-        <hr>
-        <div class="line" *ngFor="let todo of fifthWeek">
+        <!-- <h2>Fifth Week</h2>
+        <hr> -->
+        <!-- <div class="line" *ngFor="let todo of fifthWeek">
             <div>
-                <span class="day">{{todo.date | date:'EEEE' | slice:0:1}}</span>
+                <div class="day-group">
+                    <span class="day-short">{{todo.date | date:'EEEE' | slice:0:1}}</span>
+                    <span class="day">{{todo.date | date:'EEEE' | slice:1:todo.date.length}}</span>
+                </div>
                 <span class="description">{{todo.description}}</span>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

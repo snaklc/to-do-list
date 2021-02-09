@@ -13,7 +13,7 @@ export class DataService {
   toDos: ToDos[] = [
     {
       date: new Date("Tue Feb 02 2021 07:44:57"),
-      description: "Ayşe'ye günaydın denilecek.",
+      description: "Sabah erken uyan.",
       id: 0,
       status: "do"
     },
@@ -24,7 +24,7 @@ export class DataService {
       status: "do"
     },
     {
-      date: new Date("Fri Jan 1 2021 07:44:57"),
+      date: new Date("Mon Feb 1 2021 07:44:57"),
       description: "Sınava çalış.",
       id: 2,
       status: "do"
@@ -60,7 +60,7 @@ export class DataService {
       status: "do"
     },
     {
-      date: new Date("Fri Jan 2 2021 07:44:57"),
+      date: new Date("Fri Feb 8 2021 07:44:57"),
       description: "Telefon et.",
       id: 8,
       status: "do"
@@ -81,6 +81,12 @@ export class DataService {
       date: new Date("Fri Jan 28 2021 07:44:57"),
       description: "Markete git.",
       id: 11,
+      status: "do"
+    },
+    {
+      date: new Date("Wen Jan 13 2021 07:44:57"),
+      description: "Cafeye git. Kahve al.",
+      id: 12,
       status: "do"
     },
   ]
