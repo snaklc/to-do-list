@@ -1,6 +1,6 @@
 <div class="container">
     <div class="box">
-        <h2>First Week</h2>
+        <h2>First Week{{weekNumber}}</h2>
         <hr>
         <div class="line" *ngFor="let todo of firstWeek">
             <div>
@@ -11,7 +11,7 @@
                 <span class="description">{{todo.description}}</span>
             </div>
         </div>
-        <h2>Second Week</h2>
+        <h2>Second Week{{weekNumber}}</h2>
         <hr>
         <div class="line" *ngFor="let todo of secondWeek">
             <div>

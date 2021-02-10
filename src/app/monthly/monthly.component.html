@@ -1,34 +1,36 @@
 <div class="container">
-    <div class="header">
-        <h1>{{currentMonthName}}</h1>
-    </div>
-    <div class="box-group">
-        <div class="box">
-            <h2>First Week</h2>
-            <hr>
-            <div class="line" *ngFor="let todo of firstWeek">
-                <span class="description">{{todo.description}}</span>
-            </div>
+    <div class="main">
+        <div class="header">
+            <h1>{{currentMonthName}}</h1>
         </div>
-        <div class="box">
-            <h2>Second Week</h2>
-            <hr>
-            <div class="line" *ngFor="let todo of secondWeek">
-                <span class="description">{{todo.description}}</span>
+        <div class="box-group">
+            <div class="box">
+                <h2>First Week</h2>
+                <hr>
+                <div class="line" *ngFor="let todo of firstWeek">
+                    <span class="description">{{todo.description}}</span>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <h2>Third Week</h2>
-            <hr>
-            <div class="line" *ngFor="let todo of thirdWeek">
-                <span class="description">{{todo.description}}</span>
+            <div class="box">
+                <h2>Second Week</h2>
+                <hr>
+                <div class="line" *ngFor="let todo of secondWeek">
+                    <span class="description">{{todo.description}}</span>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <h2>Fourth Week</h2>
-            <hr>
-            <div class="line" *ngFor="let todo of forthWeek">
-                <span class="description">{{todo.description}}</span>
+            <div class="box">
+                <h2>Third Week</h2>
+                <hr>
+                <div class="line" *ngFor="let todo of thirdWeek">
+                    <span class="description">{{todo.description}}</span>
+                </div>
+            </div>
+            <div class="box">
+                <h2>Fourth Week</h2>
+                <hr>
+                <div class="line" *ngFor="let todo of forthWeek">
+                    <span class="description">{{todo.description}}</span>
+                </div>
             </div>
         </div>
     </div>
