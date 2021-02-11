@@ -21,10 +21,11 @@ export class MonthlyComponent implements OnInit {
   endDay;
   selectedToDos = [];
   weekNumber;
+  monthNumber;
   currentWeekNumber;
-  item;
+  currentMonthNumber;
   currentMonthName;
-  changeText; constructor(private dataService: DataService, private datePipe: DatePipe) { }
+  constructor(private dataService: DataService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -35,16 +36,24 @@ export class MonthlyComponent implements OnInit {
     this.currentWeekNumber = this.datePipe.transform(this.currentDate, 'w');
     this.todos = this.dataService.toDos;
     this.currentMonthName = monthNames[this.currentDate.getMonth()];
+    this.currentMonthNumber = this.currentDate.getMonth();
+    console.log('current month', this.currentMonthNumber);
     this.startDay = this.currentDate;
     this.endDay = this.currentDate.setDate(this.currentDate.getDate() - 28);
 
     this.selectedToDos = this.dataService.toDos.filter(td => td.date > this.startDay && this.endDay);
-    console.log('selected todos', this.selectedToDos)
+    console.log('selected todos', this.selectedToDos);
+
+    this.selectedToDos.sort((a, b) => {
+      return a.date.getTime() - b.date.getTime();
+    });
 
     this.selectedToDos.find((data) => {
       this.weekNumber = this.datePipe.transform(data.date, 'w');
       console.log('hafta numarası', this.weekNumber)
-      if (this.currentWeekNumber - 4 < 0) {
+      this.monthNumber = data.date.getMonth()
+      console.log('ay numarası', this.monthNumber)
+      if(this.currentMonthNumber - 1 > -1){
 
       }
       if (this.currentWeekNumber - 4 > 0) {
