@@ -36,19 +36,19 @@ export class DataService {
       status: "do"
     },
     {
-      date: new Date("Fri Dec 3 2020 07:44:57"),
+      date: new Date("Tue Jan 5 2021 07:44:57"),
       description: "Uyu.",
       id: 4,
       status: "do"
     },
     {
-      date: new Date("Fri Dec 2 2020 07:44:57"),
+      date: new Date("Wen Jan 20 2021 07:44:57"),
       description: "Ödev yap.",
       id: 5,
       status: "do"
     },
     {
-      date: new Date("Fri Apr 1 2020 07:44:57"),
+      date: new Date("Fri Jan 22 2021 07:44:57"),
       description: "Oyun oyna.",
       id: 6,
       status: "do"
@@ -66,7 +66,7 @@ export class DataService {
       status: "do"
     },
     {
-      date: new Date("Fri Jan 2 2021 07:44:57"),
+      date: new Date("Fri Feb 12 2021 07:44:57"),
       description: "Temizlik yap.",
       id: 9,
       status: "do"
@@ -84,8 +84,8 @@ export class DataService {
       status: "do"
     },
     {
-      date: new Date("Wen Jan 13 2021 07:44:57"),
-      description: "Cafeye git. Kahve al.",
+      date: new Date("Fri Feb 5 2021 07:44:57"),
+      description: "Coco chocolate al.",
       id: 12,
       status: "do"
     },
@@ -97,8 +97,14 @@ export class DataService {
     },
     {
       date: new Date("Wen Jan 13 2021 07:44:57"),
-      description: "Cafeye git. Kahve al.",
+      description: "Temizlik yap.",
       id: 14,
+      status: "do"
+    },
+    {
+      date: new Date("Mon Jan 18 2021 07:44:57"),
+      description: "Alışveriş yap.",
+      id: 15,
       status: "do"
     },
   ]

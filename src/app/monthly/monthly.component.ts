@@ -11,15 +11,12 @@ import { WeeklyComponent } from '../weekly/weekly.component';
 })
 export class MonthlyComponent implements OnInit {
   todos;
-  firstWeek = [];
-  secondWeek = [];
-  thirdWeek = [];
-  forthWeek = [];
-  fifthWeek = [];
   currentDate;
   startDay;
   endDay;
   selectedToDos = [];
+  monthlyArray = [];
+  weeklyArray = [];
   weekNumber;
   monthNumber;
   currentWeekNumber;
@@ -39,42 +36,60 @@ export class MonthlyComponent implements OnInit {
     this.currentMonthNumber = this.currentDate.getMonth();
     console.log('current month', this.currentMonthNumber);
     this.startDay = this.currentDate;
-    this.endDay = this.currentDate.setDate(this.currentDate.getDate() - 28);
+    this.endDay = this.currentDate.setDate(this.currentDate.getDate() - 60);
 
     this.selectedToDos = this.dataService.toDos.filter(td => td.date > this.startDay && this.endDay);
-    console.log('selected todos', this.selectedToDos);
+    // console.log('selected todos', this.selectedToDos);
 
     this.selectedToDos.sort((a, b) => {
       return a.date.getTime() - b.date.getTime();
     });
 
-    this.selectedToDos.find((data) => {
-      this.weekNumber = this.datePipe.transform(data.date, 'w');
-      console.log('hafta numarası', this.weekNumber)
-      this.monthNumber = data.date.getMonth()
-      console.log('ay numarası', this.monthNumber)
-      if(this.currentMonthNumber - 1 > -1){
+    for (let i = this.currentWeekNumber; i >= this.currentWeekNumber - 4; i--) {
+      const weekObj = {
+        week: i,
+        data: this.selectedToDos.filter((todo) => {
+          const weekNumber = this.datePipe.transform(todo.date, 'w');
+          if (weekNumber == i) {
+            return todo;
+          }
+        })
+      }
+      // this.weeklyArray.push(weekObj);
+    }
 
+    for (let i = this.currentMonthNumber; i > -1; i--) {
+        const monthObj = {
+          month: monthNames[i],
+          data: this.selectedToDos.filter((todo) => {
+            const mNumber = todo.date.getMonth()
+
+            // console.log('mNumber', mNumber)
+            if (mNumber == i) {
+              return todo;
+            }
+          })
+        }
+        this.monthlyArray.push(monthObj);
+        console.log('month array' , this.monthlyArray)
+    }
+
+    for (let i = this.currentWeekNumber; i >= this.currentWeekNumber - 4; i--) {
+      const weekObj = {
+        week: i,
+        data: this.selectedToDos.filter((todo) => {
+          const weekNumber = this.datePipe.transform(todo.date, 'w');
+          if (weekNumber == i) {
+            return todo;
+          }
+        })
       }
-      if (this.currentWeekNumber - 4 > 0) {
-        if (this.weekNumber == 1 || this.weekNumber - 4 == 1) {
-          this.firstWeek.push(data)
-        }
-        if (this.weekNumber == 2 || this.weekNumber - 4 == 2) {
-          this.secondWeek.push(data)
-        }
-        if (this.weekNumber == 3 || this.weekNumber - 4 == 3) {
-          this.thirdWeek.push(data)
-        }
-        if (this.weekNumber == 4 || this.weekNumber - 4 == 4) {
-          this.forthWeek.push(data)
-        }
-        if (this.weekNumber == 5 || this.weekNumber - 4 == 5) {
-          this.fifthWeek.push(data)
-        }
-      }
-    })
-  }
+      this.weeklyArray.push(weekObj);
+    }
+    console.log('weeklyArray', this.weeklyArray)
+   }
+
 
 
 }
+
