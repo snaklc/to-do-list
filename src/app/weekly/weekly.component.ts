@@ -8,22 +8,18 @@ import { DataService } from '../service/data.service';
   providers: [DatePipe]
 })
 export class WeeklyComponent implements OnInit {
-  todos;
   currentDate;
   startDay;
   endDay;
   selectedToDos = [];
-  weekNumber;
-  currentWeekNumber;
-  item;
-
   weeklyArray = [];
+  currentWeekNumber;
+
   constructor(private dataService: DataService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.currentDate = new Date();
     this.currentWeekNumber = this.datePipe.transform(this.currentDate, 'w');
-    this.todos = this.dataService.toDos;
     this.startDay = this.currentDate;
     this.endDay = this.currentDate.setDate(this.currentDate.getDate() - 30);
     // Şuanki tarihten 30 gün öncesine kadar filtrele
@@ -47,7 +43,9 @@ export class WeeklyComponent implements OnInit {
   }
 
   deleteToDo(todo) {
-    const index = this.selectedToDos.indexOf(todo);
-    // console.log(index);
+    console.log('weekly array',this.weeklyArray)
+    const index = this.weeklyArray.indexOf(todo);
+    this.weeklyArray.splice(index, 1);    
+    console.log(index);
   }
 }
